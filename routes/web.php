@@ -24,6 +24,7 @@ Route::get('/users', [AdminController::class, "users"]);
 Route::get('/deleteuser/{id}', [AdminController::class, "deleteuser"]);
 Route::get('/foodmenu', [AdminController::class, "foodmenu"]);
 Route::post('/uploadfood', [AdminController::class, "upload"]);
+Route::get('/deleteitem/{id}', [AdminController::class, "deleteitem"]);
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
