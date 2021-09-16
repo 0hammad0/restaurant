@@ -12,6 +12,7 @@
     @include("admin.navbar")
     <div style="position: relative; top: 60px; right: -150px">
         <form action="{{url('/uploadfood')}}" method="post" enctype="multipart/form-data">
+        @csrf
             <div>
                 <label>Title: </label>
                 <input type="text" name="title" placeholder="Write title" require style="color: black;">
@@ -26,7 +27,7 @@
             </div>
             <div>
                 <label>Description: </label>
-                <input type="text" name="description" placeholder="Write Description" require style="color: black;">
+                <input type="text" name="description" placeholder="Write description" require style="color: black;">
             </div>
             <div>
                 <input type="submit" value="save" style="color: black">

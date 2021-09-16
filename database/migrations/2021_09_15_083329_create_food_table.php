@@ -18,7 +18,7 @@ class CreateFoodTable extends Migration
             $table->String("title")->nullable();
             $table->String("price")->nullable();
             $table->String("image")->nullable();
-            $table->String("discription")->nullable();
+            $table->String("description")->nullable();
             $table->timestamps();
         });
     }
