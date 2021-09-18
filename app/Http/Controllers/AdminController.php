@@ -92,7 +92,6 @@ class AdminController extends Controller
 
         $data->name=$request->name;
         $data->speciality=$request->speciality;
-        $data->image=$request->image;
 
         $data->save();
         return redirect()->back();
