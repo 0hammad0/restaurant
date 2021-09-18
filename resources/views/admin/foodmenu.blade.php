@@ -5,6 +5,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+      <base href="/public">
     @include("admin.admincss")
   </head>
   <body>
@@ -23,7 +24,7 @@
             </div>
             <div>
                 <label>Image: </label>
-                <input type="file" name="image" placeholder="Write Image" require>
+                <input type="file" name="image" require>
             </div>
             <div>
                 <label>Description: </label>
@@ -40,6 +41,7 @@
             <th style="padding: 30px">Description</th>
             <th style="padding: 30px">Image</th>
             <th style="padding: 30px">Action</th>
+            <th style="padding: 30px">Action 2</th>
         </tr>
         @foreach($data as $data)
         <tr align= "center">
@@ -48,6 +50,7 @@
             <td>{{$data->description}}</td>
             <td><img src="/foodimage/{{$data->image}}"; width="200" height="200"></td>
             <td><a href="{{url('/deleteitem', $data->id)}}">Delete</a></td>
+            <td><a href="{{url('/updateitem', $data->id)}}">Update</a></td>
         </tr>
         @endforeach
         </table>
