@@ -30,7 +30,9 @@ Route::post('/update/{id}', [AdminController::class, "update"]);
 Route::post('/reservation', [AdminController::class, "reservation"]);
 Route::get('/viewreservation', [AdminController::class, "viewreservation"]);
 Route::get('/viewchef', [AdminController::class, "viewchef"]);
-Route::post('/updatechef', [AdminController::class, "updatechef"]);
+Route::post('/uploadchef', [AdminController::class, "uploadchef"]);
+Route::get('/deletechef/{id}', [AdminController::class, "deletechef"]);
+Route::get('/updatechef/{id}', [AdminController::class, "updatechef"]);
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

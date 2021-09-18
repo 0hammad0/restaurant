@@ -10,7 +10,7 @@
   <body>
   <div class="container-scroller">
     @include("admin.navbar")
-    <form action="{{url('/updatechef')}}" method="post" enctype="multipart/form-data">
+    <form action="{{url('/uploadchef')}}" method="post" enctype="multipart/form-data">
     @csrf
       <div>
         <label>Name: </label>
@@ -26,19 +26,27 @@
       <div>
         <input type="submit" value="save" style="color: black">
       </div>
-    </form>
-    <table>
+    <div style="position: relative; top: 60px; right: -150px">
+    <table bgcolor="grey">
       <tr>
         <th style="padding: 30px">Name</th>
         <th style="padding: 30px">Speciality</th>
         <th style="padding: 30px">Picture of Chef</th>
+        <th style="padding: 30px">Action</th>
+        <th style="padding: 30px">Action 2</th>
       </tr>
+      @foreach($data as $data)
       <tr align = "center">
-        <th>A</th>
-        <th>B</th>
-        <th>C</th>
+        <td>{{$data->name}}</td>
+        <td>{{$data->speciality}}</td>
+        <td><img src="/chefimage/{{$data->image}}" height="200" width="200"></td>
+        <td><a href="{{url('/deletechef', $data->id)}}">Delete</a></td>
+        <td><a href="{{url('/updatechef', $data->id)}}">Update</a></td>
       </tr>
+      @endforeach
     </table>
+    </form>
+</div>
 </div>
 
     @include("admin.adminscript")

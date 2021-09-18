@@ -34,7 +34,7 @@
                 <input type="submit" value="save" style="color: black">
             </div>
         </form>
-        <table bgcolor="black"; style="position: relative; top: 20px">
+        <table bgcolor="black"; >
         <tr>
             <th style="padding: 30px">Title</th>
             <th style="padding: 30px">Price</th>
