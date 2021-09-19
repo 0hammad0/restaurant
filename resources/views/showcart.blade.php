@@ -31,6 +31,8 @@ https://templatemo.com/tm-558-klassy-cafe
 
     <link rel="stylesheet" href="assets/css/lightbox.css">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     </head>
     
     <body>
@@ -158,11 +160,34 @@ https://templatemo.com/tm-558-klassy-cafe
         </tr>
         @endforeach
         @foreach($data2 as $data2)
-        <tr style="position: relative; top:-355px; right: -360px">
-            <td style="padding: 30px"><a href="{{url('/remove', $data2->id)}}" class="btn btn-warning">Remove{{}}</a></td>
+        <tr style="position: relative; top:-355px; right: -360px;">
+            <td style="padding: 30px"><a href="{{url('/remove', $data2->id)}}" class="btn btn-warning">Remove</a></td>
         </tr>
         @endforeach
     </table>
+
+        <div align="center" style="padding: 5px">
+            <button class="btn btn-primary">Order</button>
+        </div>
+
+        <div align="center" style="position: relative">
+        <div style="padding: 5px">
+            <lable>Name: </lable>
+            <input type="text" name="name" placeholder="Enter your name" require style="color:black">
+        </div>
+        <div style="padding: 5px">
+            <lable>Phone: </lable>
+            <input type="text" name="phonenumber" placeholder="Enter your phone number" require style="color:black">
+        </div>
+        <div style="padding: 5px">
+            <lable>Address: </lable>
+            <input type="text" name="address" placeholder="Enter your address" require style="color:black">
+        </div>
+        <div>
+            <input class="btn btn-success" type="submit" value="Order Confirm">
+        </div>
+
+    </div>
 </div>
 
 
