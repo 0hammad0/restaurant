@@ -65,7 +65,13 @@ class AdminController extends Controller
     public function reservation(Request $request){
         $data = new reservation;
 
-        $data->name=$request->name;
+        //Method 1
+        // $data->name=$request->name;
+
+        $name=$request->name;
+        $data->name=$name;
+
+        //Method 2
         $data->email=$request->email;
         $data->phonenumber=$request->phonenumber;
         $data->guest=$request->guest;

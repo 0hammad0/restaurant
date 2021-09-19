@@ -57,7 +57,18 @@ https://templatemo.com/tm-558-klassy-cafe
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
-                            <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
+                            <li class="scroll-to-section">
+                                @auth
+                                <a href="{{url('/redirects')}}" class="active">
+                                Home
+                                </a>
+                                @endauth
+
+                                @guest
+                                <a href="{{url('/')}}" class="active">
+                                Home
+                                </a>
+                                @endguest</li>
                             <li class="scroll-to-section"><a href="#about">About</a></li>
                            	
                         <!-- 
@@ -83,6 +94,22 @@ https://templatemo.com/tm-558-klassy-cafe
                             </li>
                             <!-- <li class=""><a rel="sponsored" href="https://templatemo.com" target="_blank">External URL</a></li> -->
                             <li class="scroll-to-section"><a href="#reservation">Contact Us</a></li> 
+
+                            <li class="scroll-to-section">
+                            <!-- <a href="#reservation"> -->
+                                @auth
+                                <a href="{{url('/showcart', Auth::user()->id)}}">
+                                Cart [{{$count}}]
+                                </a>
+                                @endauth
+
+                                @guest
+                                <a href="{{url('/login')}}">
+                                Cart [0]
+                                </a>
+                                @endguest
+                            <!-- </a> -->
+                            </li> 
                         
                             <li>
                         @if (Route::has('login'))
