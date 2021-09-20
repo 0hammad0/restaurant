@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\food;
 use App\Models\Reservation;
 use App\Models\Foodchef;
+use App\Models\Order;
 
 class AdminController extends Controller
 {
@@ -127,5 +128,15 @@ class AdminController extends Controller
 
         $data= foodchef::all();
         return view('admin.adminchef', compact('data'));
+    }
+    public function orders(){
+        $data = order::all();
+        return view("admin.orders", compact("data"));
+    }
+    public function search(Request $request){
+        $search=$request->search;
+        $data=order::where('name','Like','%'.$search.'%')->orWhere('foodname','Like','%'.$search.'%')
+        ->get();
+        return view("admin.orders", compact("data"));
     }
 }

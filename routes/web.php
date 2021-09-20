@@ -38,6 +38,8 @@ Route::post('/addcart/{id}', [HomeController::class, "addcart"]);
 Route::get('/showcart/{id}', [HomeController::class, "showcart"]);
 Route::get('/remove/{id}', [HomeController::class, "remove"]);
 ROute::post('/orderconfirm', [HomeController::class, "orderconfirm"]);
+Route::get('/orders', [AdminController::class, "orders"]);
+Route::get('/search', [AdminController::class, "search"]);
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

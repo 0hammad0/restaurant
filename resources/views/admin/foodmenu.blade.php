@@ -46,7 +46,7 @@
         @foreach($data as $data)
         <tr align= "center">
             <td>{{$data->title}}</td>
-            <td>{{$data->price}}</td>
+            <td>{{$data->price}}$</td>
             <td>{{$data->description}}</td>
             <td><img src="/foodimage/{{$data->image}}"; width="200" height="200"></td>
             <td><a href="{{url('/deleteitem', $data->id)}}">Delete</a></td>
