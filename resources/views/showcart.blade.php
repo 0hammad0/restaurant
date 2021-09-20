@@ -144,7 +144,7 @@ https://templatemo.com/tm-558-klassy-cafe
 
 
 <div id="top">
-    <table align="center" bgcolor="grey">
+    <table align="center" bgcolor="grey" id="cart_table">
         <tr>
             <th style="padding: 30px">Food Name</th>
             <th style="padding: 30px">Price</th>
@@ -152,11 +152,24 @@ https://templatemo.com/tm-558-klassy-cafe
             <th style="padding: 30px">Remove<th>
         </tr>
 
+
+    <form action="{{url('/orderconfirm')}}" method="post">
+        @csrf
+
         @foreach($data as $data)
         <tr>
-            <td style="padding: 30px">{{$data->title}}</td>
-            <td style="padding: 30px">{{$data->price}}</td>
-            <td style="padding: 30px">{{$data->quantity}}</td>
+            <td style="padding: 30px">
+                <input type="text" value="{{$data->title}}" name="foodname[]" hidden>
+                {{$data->title}}
+            </td>
+            <td style="padding: 30px">
+            <input type="text" value="{{$data->price}}" name="price[]" hidden>
+                {{$data->price}}
+            </td>
+            <td style="padding: 30px">
+                <input type="text" value="{{$data->quantity}}" name="quantity[]" hidden>
+                {{$data->quantity}}
+            </td>
         </tr>
         @endforeach
         @foreach($data2 as $data2)
@@ -167,17 +180,17 @@ https://templatemo.com/tm-558-klassy-cafe
     </table>
 
         <div align="center" style="padding: 5px">
-            <button class="btn btn-primary">Order</button>
+            <button class="btn btn-primary" id="order" type="button">Order</button>
         </div>
 
-        <div align="center" style="position: relative">
+    <div align="center" style="position: relative; display: none" id="appear">
         <div style="padding: 5px">
             <lable>Name: </lable>
             <input type="text" name="name" placeholder="Enter your name" require style="color:black">
         </div>
         <div style="padding: 5px">
             <lable>Phone: </lable>
-            <input type="text" name="phonenumber" placeholder="Enter your phone number" require style="color:black">
+            <input type="text" name="phone" placeholder="Enter your phone number" require style="color:black">
         </div>
         <div style="padding: 5px">
             <lable>Address: </lable>
@@ -185,12 +198,32 @@ https://templatemo.com/tm-558-klassy-cafe
         </div>
         <div>
             <input class="btn btn-success" type="submit" value="Order Confirm">
+            <button type="button" class="btn btn-danger" id="Cancel">Cancel</button>
+
+            <!-- <button type="submit" class="btn btn-danger" value="cancel">Cancel</button> -->
         </div>
 
     </div>
+    </form>
 </div>
 
 
+    <script typr="text/javascript">
+    $("#order").click(
+        function (){
+        $("#appear").show();
+        $("#cart_table").hide();
+        $("#order").hide();
+    }
+    );
+    $("#Cancel").click(
+        function(){
+            $("#appear").hide();
+            $("#cart_table").show();
+            $("#order").show();
+        }
+    )
+    </script>
 
 
     <!-- jQuery -->
