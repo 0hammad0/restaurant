@@ -10,6 +10,7 @@
   <body>
   <div class="container-scroller">
     @include("admin.navbar")
+    
 <div align="center" clas="container">
     <h1>Customers Orders</h1>
 

@@ -25,7 +25,7 @@
         <input type="file" name="image" required="">
       </div>
       <div>
-        <input type="submit" value="save" style="color: black">
+        <input type="submit" value="save" class="btn btn-success">
       </div>
     <div style="position: relative; top: 60px; right: -150px">
     <table bgcolor="grey">

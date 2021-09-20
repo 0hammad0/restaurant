@@ -44,5 +44,18 @@
                 </x-jet-button>
             </div>
         </form>
+
+            <div class="flex items-center justify-end mt-4">
+            <x-jet-button class="ml-4"><a href="{{ route('register') }}">
+                    {{ __('Register') }} </a>
+                </x-jet-button>
+            </div>
+
     </x-jet-authentication-card>
 </x-guest-layout>
+
+<script type="text/javascript">
+function register(){
+    window.history.
+}
+</script>

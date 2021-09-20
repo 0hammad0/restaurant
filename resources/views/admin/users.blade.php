@@ -30,12 +30,12 @@
           </tr>
           @foreach($data as $data)
           <tr align="center">
-              <td>{{$data->name}}</td>
-              <td>{{$data->email}}</td>
+              <td style="padding: 10px">{{$data->name}}</td>
+              <td style="padding: 10px">{{$data->email}}</td>
               @if($data->usertype=="0")
-              <td><a href="{{url('/deleteuser', $data->id)}}">Delete</a></td>
+              <td class="btn btn-danger" style="padding: 10px" name="delete"><a href="{{url('/deleteuser', $data->id)}}">Delete</a></td>
               @else
-              <td><a>Delete</a></td>
+              <td class="btn btn-danger" style="padding: 10px"><a>Delete</a></td>
               @endif
           </tr>
           @endforeach

@@ -31,11 +31,21 @@
         <input type="file" name="image" height="200" width="200" require>
       </div>
       <div>
-        <input type="submit" value="save" style="color: black">
+        <input type="submit" value="save" class="btn btn-success">
+        <button type="button" class="btn btn-danger" onclick="back()">Back</button>
       </div>
     </form>  
     </div>
   </div>
+
+  
+  <script type="text/javascript">
+
+    function back() {
+    window.history.back();
+    }
+
+</script>
 
     @include("admin.adminscript")
   </body>
